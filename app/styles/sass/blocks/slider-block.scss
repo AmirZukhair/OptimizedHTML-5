@@ -1,0 +1,108 @@
+section.top{
+  padding-bottom: $padding-desktop;
+  @include media-for(null, $tablet){
+    padding-bottom: $padding-modile; 
+}
+}
+.swiper-container {
+  width: 100%;
+  &.swiper-top{
+    
+    height: 500px;
+  }
+  &.testimonials{
+    height: auto;
+  }
+  .swiper-button-prev{
+    &::after{
+      color: #000000;
+     }
+  }
+  .swiper-button-next{
+       &::after{
+        color: #000000;
+       }
+  }
+  @include media-for(null, $tablet){
+    &.swiper-top{
+      height: 300px;
+    }
+    .swiper-button-prev{
+      display: none !important;
+    }
+    .swiper-button-next{
+         display: none !important;
+    }
+}
+  .swiper-wrapper {
+  
+    .swiper-slide {
+      .slide-content{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            @include media-for($tablet + 1, null){
+              align-items: center;
+            }
+            &.slide-1{
+              background-image: url(../images/dist/slide1.png);
+              @include media-for(null, $laptop + 1){
+                  background-image: url(../images/dist/slide1-mobile.png);
+                  background-position: bottom left;
+              }
+              .slider-text{
+                h4{
+                  color: #7b408d;
+                }
+              }
+            }
+            &.slide-2{
+                background-image: url(../images/dist/slide2.png);
+                @include media-for(null, $laptop + 1){
+                    background-image: url(../images/dist/slide2-mobile.png);
+                    background-position: bottom left;
+                }
+                .slider-text{
+                  h4{
+                    color: #ffffff;
+                  }
+                }
+            }
+            &.slide-3{
+              background-image: url(../images/dist/slide3.png);
+              @include media-for(null, $laptop + 1){
+                  background-image: url(../images/dist/slide3-mobile.png);
+                  background-position: bottom left;
+              }
+              .slider-text{
+                h4{
+                  color: #b12d2d;
+                }
+              }
+          }
+            .slider-text{
+                max-width: 600px;
+                @include media-for(null, $tablet + 1){
+                  padding: 3rem 0;
+              }
+
+              @include media-for(null, $phone-old){
+                padding: 3rem 1rem;
+                h4{
+                  font-size: 18px;
+              }
+                
+             }
+                h4{
+                    text-align: center;
+                    color: $textcolor;
+                }
+            }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.article{
+    padding-bottom: $padding-desktop;
+
+    @include media-for(null, $tablet){
+        padding-bottom:  $padding-modile;
+    }
+   
+    &__content{
+        position: relative;
+        &-image{
+            padding: 15px 0;
+        }
+    }
+
+    .swiper-constructor{ 
+        height: 550px;
+        max-width: 350px;
+        margin: auto 0 0 0;
+        @include media-for(null, $desktop){
+            margin: 0  auto ;
+        }
+    }
+    &.article-2{
+        .article__content-image{
+            position: relative;
+            .contsructor-static-image{
+                position: absolute;
+                top: 0;
+                right: 0;
+                max-width: 250px;
+                @include media-for(null, $desktop){
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    p{
+        font-size: 14px;
+        padding-left: 25px;
+    }
+}

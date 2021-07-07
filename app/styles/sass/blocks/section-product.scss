@@ -1,0 +1,28 @@
+.product{
+    padding-bottom: $padding-desktop;
+    @include media-for(null, $tablet){
+        padding-bottom:  $padding-modile;
+    }
+    &__inner{
+        position: relative;
+    }
+    &-image{
+        transform: rotate(-5deg);
+        max-width: 85%;
+        margin: 0 auto;
+    }
+    &-content{
+        position: absolute;
+        top: 50%;
+        left: 8rem;
+        transform: translateY(-50%);
+        z-index: 2;
+        @include media-for(null, $tablet){
+            position: initial;
+            top: unset;
+            left: unset;
+            transform: translateY(0%);
+            padding-bottom: $padding-modile;
+        }
+    }
+}

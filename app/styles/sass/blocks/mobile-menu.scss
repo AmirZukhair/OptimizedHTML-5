@@ -1,0 +1,29 @@
+@include media-for(null, $laptop){
+    .mobile-menu{
+        position: relative;
+        z-index: 666;
+        width: 30px;
+        height: 25px;
+        margin: 0 0 0 auto;
+        
+        span{
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: lightcoral;
+          transition: 0.228s ease-in;
+          &:first-child{
+            top: 0;
+          }
+
+          &:nth-child(2n){
+            top: 50%;
+            transform: translateY(-50%);
+          }  
+
+          &:last-child{
+              bottom: 0;
+          }
+        }
+    }
+}

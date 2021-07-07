@@ -1,3 +1,4 @@
+"use strict";
 let preprocessor = 'sass', // Preprocessor (sass, less, styl); 'sass' also work with the Scss syntax in blocks/ folder.
 		fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
 
@@ -26,7 +27,6 @@ function browsersync() {
 			baseDir: 'app/',
 			middleware: bssi({ baseDir: 'app/', ext: '.html' })
 		},
-		ghostMode: { clicks: false },
 		notify: false,
 		online: true,
 		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt

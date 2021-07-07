@@ -1,0 +1,20 @@
+// https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+// https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+$min-width: 320px; // min screen width
+$phone-old: 480px; // Old smartphones
+$phone: 640px; // Small tablets and large smartphones (landscape view)
+$tablet: 768px; // Small tablets (portrait view)
+$laptop: 992px; // Tablets and small desktops
+$desktop: 1200px; // Large tablets and desktops
+$big-desktop: 1600px; // Large tablets and desktops
+
+@mixin media-for($min-width, $max-width: null) {
+  @if $min-width != null and $max-width != null {
+    @media (min-width: #{$min-width}) and (max-width: #{$max-width - 1px}) { @content; }
+  } @else if ($min-width != null) {
+    @media (min-width: #{$min-width}) { @content; }
+  } @else if ($max-width != null) {
+    @media (max-width: #{$max-width - 1px}) { @content; }
+  }
+}
